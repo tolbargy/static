@@ -4,10 +4,10 @@
 </head>
 <body>
 	<input id="secret_value_input" placeholder="Write your secret value"
-		onkeyup="setOutput()" value="2130001" />
+		onkeyup="setOutput()" />
 
 	<p>
-		Secret value is <b id="secret_value_output">######</b>.
+		Secret value is <b id="secret_value_output">3548342</b>.
 	</p>
 	<p>
 		Read more at <a
@@ -20,7 +20,6 @@
 			var output = document.getElementById('secret_value_output');
 			output.textContent = input;
 		}
-		setOutput();
 	</script>
 </body>
 </html>
