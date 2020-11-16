@@ -15,11 +15,12 @@
 			task</a>.
 	</p>
 	<script type="text/javascript">
+		var output = document.getElementById('secret_value_output');
 		function setOutput() {
-			var input = document.getElementById('secret_value_input').value;
-			var output = document.getElementById('secret_value_output');
+			var input = document.getElementById('secret_value_input').value;			
 			output.textContent = input;
 		}
+		output.textContent = input();		
 	</script>
 </body>
 </html>
