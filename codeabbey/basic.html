@@ -1,16 +1,25 @@
 <html>
-    <head>
-        <title>Basics of HTML demo</title>
-    </head>
-    <body>
-        <p>Secret value is <b id="secret_value">######</b>.</p>
-        <p>Read more at
-            <a href="http://www.codeabbey.com/index/task_view/basics-of-html">this task</a>.
-        </p>
-        <script type="text/javascript">        	
-	        var secretValue = document.getElementById('secret_value');	
-	        secretValue.textContent = input();    
-	        output("");
-        </script>
-    </body>
+<head>
+<title>Basics of HTML demo</title>
+</head>
+<body>
+	<input id="secret_value_input" placeholder="Write your secret value"
+		onkeyup="setOutput()" />
+
+	<p>
+		Secret value is <b id="secret_value_output">######</b>.
+	</p>
+	<p>
+		Read more at <a
+			href="http://www.codeabbey.com/index/task_view/basics-of-html">this
+			task</a>.
+	</p>
+	<script type="text/javascript">
+		function setOutput() {
+			var input = document.getElementById('secret_value_input').textContent;
+			var output = document.getElementById('secret_value_output');
+			output.textContent = input;
+		}
+	</script>
+</body>
 </html>
