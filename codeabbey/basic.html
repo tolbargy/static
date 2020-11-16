@@ -7,20 +7,19 @@
 		onkeyup="setOutput()" />
 
 	<p>
-		Secret value is <b id="secret_value_output">3548342</b>.
+		Secret value is <b id="secret_value_output">######</b>.
 	</p>
 	<p>
 		Read more at <a
 			href="http://www.codeabbey.com/index/task_view/basics-of-html">this
 			task</a>.
 	</p>
-	<script type="text/javascript">
-		var output = document.getElementById('secret_value_output');
-		function setOutput() {
+	<script type="text/javascript">		
+		function setOutput() {			
 			var input = document.getElementById('secret_value_input').value;			
+			var output = document.getElementById('secret_value_output');
 			output.textContent = input;
-		}
-		output.textContent = input();		
+		}			
 	</script>
 </body>
 </html>
