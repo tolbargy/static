@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-eps-adn-qa
+  labels:
+    app: backend-eps-adn-qa
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend-eps-adn-qa
+  template:
+    metadata:
+      labels:
+        app: backend-eps-adn-qa
+    spec:
+      containers:
+      - name: backend-eps-adn-qa
+        image: tolbargy/backend-eps-adn-qa
+        ports:
+        - containerPort: 8080
