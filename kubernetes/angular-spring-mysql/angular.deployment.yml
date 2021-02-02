@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-eps-adn-qa
+  labels:
+    app: frontend-eps-adn-qa
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend-eps-adn-qa
+  template:
+    metadata:
+      labels:
+        app: frontend-eps-adn-qa
+    spec:
+      containers:
+      - name: frontend-eps-adn-qa
+        image: tolbargy/frontend-eps-adn-qa
+        ports:
+        - containerPort: 80

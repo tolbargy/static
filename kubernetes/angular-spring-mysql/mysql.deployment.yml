@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-adn
+spec:
+  selector:
+    matchLabels:
+      app: mysql-adn
+  template:
+    metadata:
+      labels:
+        app: mysql-adn
+    spec:
+      containers:
+      - image: mysql:8.0
+        name: mysql-adn
+        env:
+          # Use secret in real usage
+        - name: MYSQL_ROOT_PASSWORD
+          value: tolbar12345
+        ports:
+        - containerPort: 3306
