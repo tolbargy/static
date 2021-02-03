@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: example-secret
-        image: tolbargy/nginx:alpine
+        image: tolbargy/nginx
         ports:
         - containerPort: 80
       imagePullSecrets:
