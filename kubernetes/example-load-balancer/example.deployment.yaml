@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example
+  labels:
+    role: example
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      role: example
+      tier: web
+  template:
+    metadata:
+      labels:
+        role: example
+        tier: web
+    spec:
+      containers:
+      - name: example-nginx
+        image: nginx:alpine
+        ports:
+        - containerPort: 80

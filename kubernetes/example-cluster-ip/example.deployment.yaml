@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello
+  name: example
   labels:
-    role: hello
+    role: example
 spec:
   replicas: 3
   selector:
     matchLabels:
-      role: hello
+      role: example
       tier: web
   template:
     metadata:
       labels:
-        role: hello
+        role: example
         tier: web
     spec:
       containers:
-      - name: hello-app
-        image: gcr.io/google-samples/hello-app:1.0
+      - name: example-nginx
+        image: nginx:alpine
         ports:
-        - containerPort: 8080
+        - containerPort: 80
