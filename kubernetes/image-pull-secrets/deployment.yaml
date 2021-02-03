@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-secret
+  labels:
+    role: example-secret
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      role: example-secret
+      tier: web
+  template:
+    metadata:
+      labels:
+        role: example-secret
+        tier: web
+    spec:
+      containers:
+      - name: example-secret
+        image: tolbargy/nginx:alpine
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+       - name: docker-secret
