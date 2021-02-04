@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    app: s3-provider
+  name: s3-provider
+spec:
+  selector:
+    matchLabels:
+      app: s3-provider
+  template:
+    metadata:
+      labels:
+        app: s3-provider
+    spec:
+      containers:
+      - name: s3fuse
+        image: meain/s3-mounter
+        securityContext:
+          privileged: true
+        envFrom:
+        - configMapRef:
+            name: s3-config
+        volumeMounts:
+        - name: mntdatas3fs
+          mountPath: /var/s3fs:shared
+      volumes:
+      - name: mntdatas3fs
+        hostPath:
+          path: /run/desktop/mnt/host/c/volumes-kubernetes/s3data
