@@ -1,0 +1,16 @@
+version: '3'
+services:
+  chromium:
+    image: monstrenyatko/chromium:ee52cdba
+    platform: linux/arm/v7
+    container_name: chromium
+    cap_add:
+      - SYS_ADMIN
+    environment:
+      - LOG_LEVEL=info
+      - DISPLAY_WIDTH=1600
+      - DISPLAY_HEIGHT=968
+    ports:
+      - "8282:5980"
+    shm_size: '128mb'
+    restart: unless-stopped
