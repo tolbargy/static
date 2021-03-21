@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+    nginx-server-test:
+        container_name: nginx-server-test
+        restart: always
+        volumes:
+            - '/home/pi/workspace/volumes/nginx-server-test:/usr/share/nginx/html'
+        image: nginx:alpine
+        ports:
+         - "80:80"
