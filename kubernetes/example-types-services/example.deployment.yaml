@@ -1,20 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: example
-  labels:
-    role: example
+  name: nginx-example
 spec:
   replicas: 3
   selector:
     matchLabels:
-      role: example
-      tier: web
+      role: nginx-example
   template:
     metadata:
       labels:
-        role: example
-        tier: web
+        role: nginx-example
     spec:
       containers:
       - name: example-nginx
