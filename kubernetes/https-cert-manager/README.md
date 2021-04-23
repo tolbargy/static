@@ -14,4 +14,6 @@ kubectl -n ingress-nginx get deploy
 kubectl -n ingress-nginx get services
 
 
+### Referencias
 
+https://stackoverflow.com/questions/49845021/getting-an-kubernetes-ingress-endpoint-ip-address
