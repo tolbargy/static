@@ -13,8 +13,14 @@ kubectl -n ingress-nginx get deploy
 ## El service ingress-nginx-controller de Tipo LoadBalancer debe tener un EXTERNAL-IP --> localhost
 kubectl -n ingress-nginx get services
 
+# Instalar Cert Manager
+kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v0.12.0/cert-manager.yaml
+
 
 ### Referencias
 
 https://stackoverflow.com/questions/49845021/getting-an-kubernetes-ingress-endpoint-ip-address
 https://youtu.be/ZKrC261Rxqo
+
+
+
