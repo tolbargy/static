@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - pruebas.internal
+    - pruebas.internal.com
     secretName: hello-tls
   rules:
-  - host: pruebas.internal
+  - host: pruebas.internal.com
     http:
       paths:
       - backend:
