@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - pruebas.internal.com
+    - ceiba.tolbargy.com
     secretName: hello-tls
   rules:
-  - host: pruebas.internal.com
+  - host: ceiba.tolbargy.com
     http:
       paths:
       - backend:
