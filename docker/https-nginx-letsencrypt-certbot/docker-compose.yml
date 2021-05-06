@@ -1,0 +1,13 @@
+version: '3'
+services:
+  test-angular-https:
+    image: test-angular-https
+    container_name: test-angular-https
+    environment:
+      CERTBOT_EMAIL: "correotest@gmail.com"
+    build: ./
+    ports:
+    - "80:80"
+    - "443:443"
+    volumes:
+      - /home/ubuntu/project/letsencrypt:/etc/letsencrypt
